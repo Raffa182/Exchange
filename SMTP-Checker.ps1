@@ -39,13 +39,13 @@ $mbx = $fix | Foreach-Object {Get-recipient -ResultSize Unlimited -identity $_.S
 
 # Loop section
 foreach ($target in $mbx) {
-    IF ($target.emailaddresses -like "*@bluecrossmn.com") {
+    IF ($target.emailaddresses -like "*@domain.com") {
     Write-host $target.Name "Email OK" -ForegroundColor Green
     }
     ELSE {
     $counter++
     IF ($counter -lt $max) {
-    Write-Host "*@bluecrossmn.com does not exist on" $target -ForegroundColor Yellow
+    Write-Host "*@domain.com does not exist on" $target -ForegroundColor Yellow
     Write-Host "Processing object number" $counter -ForegroundColor Yellow
     Get-Mailbox -Identity $target.Alias | select @{Name='EmailAddress';Expression={$_.PrimarySMTPAddress}} | Export-Csv -NoTypeInformation -Delimiter ";" .\"$filename"_Added_onmicrosft_address.csv -Append
                     $sUserToAdjust = $target.PrimarySmtpAddress
