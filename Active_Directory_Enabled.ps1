@@ -24,10 +24,10 @@ foreach ($Sam in $Mailboxes) {
     switch (($Sam.OrganizationalUnit -split ("/"))[0])
 	 
     {
-    "am.boehringer.com" {$server = "INGDCAM01.am.boehringer.com"}
-    "eu.boehringer.com" {$server = "INHDC01.eu.boehringer.com"}
-    "ap.boehringer.com" {$server = "INGDCAP01.ap.boehringer.com"}
-    "boehringer.com" {$server = "INGRC01.boehringer.com"}
+    "Server.am.com" {$server = "Server.am.com"}
+    "Server.am.com" {$server = "Server.am.com"}
+    "Server.am.com" {$server = "Server.am.com"}
+    "Server.am.com" {$server = "Server.am.com"}
     }
 	
 
